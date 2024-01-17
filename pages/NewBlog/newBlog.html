@@ -39,6 +39,29 @@
       <div class="desctiption">
         <p>აღწერა *</p>
         <div class="descript" contenteditable="true" placeholder="შეიყვანეთ აღწერა"></div>
+        <p>მინიმუმ 2 სიმბოლო</p>
+      </div>
+      <div class="choose__time">
+        <div class="time__input">
+          <p>გამოქვეყნების თარიღი *</p>
+          <input type="date" min="2018-01-01" max="2030-12-31" value="2024-01-17">
+        </div>
+        <div class="select">
+          <p>კატეგორია *</p>
+          <select name="blogs" id="blogs">
+            <option value="">აირჩიეთ კატეგორია</option>
+            <option value="market">მარკეტი</option>
+            <option value="aplicattion">აპლიკაცია</option>
+            <option value="ai">ხელოვნური ინტელექტი</option>
+            <option value="ui-ux">UX/UI</option>
+            <option value="research">კვლევა</option>
+            <option value="figma">figma</option>
+          </select>
+        </div>
+      </div>
+      <div class="mail">
+        <p>ელ-ფოსტა</p>
+        <input type="email" placeholder="exemple@redberry.ge">
       </div>
     </div>
     <script src="./newBlog.js"></script>
