@@ -15,9 +15,7 @@ header{
 }
 .container{
     width: 600px;
-    height: 928px;
-    background-color: azure;
-    margin: 40px 380px;
+    `margin: 40px 380px;
 }
 .container h1{
     margin-bottom: 34px;
@@ -117,6 +115,11 @@ div[contenteditable="true"]:empty:before {
 .mail p{
     margin-bottom: 8px;
 }
+.arrow{
+    position: absolute;
+    left: 76px;
+    top:120px;
+}
 .mail input{
     width: 288px;
     height: 44px;
@@ -125,6 +128,24 @@ div[contenteditable="true"]:empty:before {
     padding: 0 10px;
     outline: none;
     font-size: 15px;
+}
+.publication{
+   display: flex;
+   justify-content: end;
+   margin-top: 20px;
+}
+.button__publication{
+    width: 228px;
+    height: 40px;
+    background-color:#E4E3EB ;
+}
+input[type="file"]{
+    display: none;
+}
+.file__unpload{
+    border-bottom: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
 }
 
 

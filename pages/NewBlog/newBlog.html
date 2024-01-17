@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="newBlog.css" />
     <title>Document</title>
@@ -11,13 +12,14 @@
     <header>
       <img src="../../images/redberry.png" alt="redberry__logo" class="logo">
     </header>
+    <img src="../../images/Arrow.png" alt="arrow__image" class="arrow">
     <div class="container">
       <h1>ბლოგის დამატება</h1>
       <div class="image__window">
         <p>ატვირთეთ ფოტო</p>
         <div class="choose__image">
           <img src="../../images/folder-add.png" alt="folder__add__icon" class="folder__add__icon">
-          <p>ჩააგდეთ ფაილი აქ ან <a>აირჩიეთ ფაილი</a></p>
+          <p>ჩააგდეთ ფაილი აქ ან <label for="unpload" class="file__unpload"><input type="file" name="" id="unpload"><b>აირჩიეთ ფაილი</b></label></p>
         </div>
       </div>
       <div class="author">
@@ -62,6 +64,9 @@
       <div class="mail">
         <p>ელ-ფოსტა</p>
         <input type="email" placeholder="exemple@redberry.ge">
+      </div>
+      <div class="publication">
+        <button class="button__publication">გამოქვეყნება</button>
       </div>
     </div>
     <script src="./newBlog.js"></script>
