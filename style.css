@@ -1,0 +1,10 @@
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 76px;
+}
+h1 {
+  font-size: 64px;
+  color: #1a1a1f;
+}
