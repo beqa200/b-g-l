@@ -21,7 +21,7 @@ header{
 }
 .container h1{
     margin-bottom: 34px;
-    color:#1A1A
+    color:black;
 }
 .choose__image{
     width: 100%;
@@ -31,7 +31,7 @@ header{
     background-color:#f4f3ff;
     margin-top: 10px;
 }
-.folder__add__icongit{
+.folder__add__icon{
     width: 40px;
     height: 40px;
 }
