@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt@-10..0&display=swap");
 .main {
   display: flex;
   justify-content: start;
@@ -216,8 +217,10 @@ h3,
   background: rgba(8, 210, 174, 0.08);
 }
 .paragraph {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   color: #404049;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 28px;
 }
 .last-item {
