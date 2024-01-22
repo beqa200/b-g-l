@@ -17,9 +17,13 @@
       <h1>ბლოგის დამატება</h1>
       <div class="image__window">
         <p>ატვირთეთ ფოტო</p>
+        <div class="change">
+          <img src="../../images/gallery.png" alt="gallery">
+          <p class="bogging">blogging.JPEG</p>
+        </div>
         <div class="choose__image">
           <img src="../../images/folder-add.png" alt="folder__add__icon" class="folder__add__icon">
-          <p>ჩააგდეთ ფაილი აქ ან <label for="unpload" class="file__unpload"><input type="file" name="" id="unpload"><b>აირჩიეთ ფაილი</b></label></p>
+          <p class="choose__image__p">ჩააგდეთ ფაილი აქ ან <label for="upload" class="file__upload"><input type="file" name="" id="upload"><b>აირჩიეთ ფაილი</b></label></p>
         </div>
       </div>
       <div class="author">
@@ -35,18 +39,18 @@
          <div class="input__title">
            <p>სათაური *</p>
            <input type="text" class="title__information" placeholder="შეიყვანეთ სათაური">
-           <p>მინიმუმ ორი სიმბოლო</p>
+           <p class="title__value">მინიმუმ ორი სიმბოლო</p>
          </div>
       </div>
       <div class="desctiption">
         <p>აღწერა *</p>
         <div class="descript" contenteditable="true" placeholder="შეიყვანეთ აღწერა"></div>
-        <p>მინიმუმ 2 სიმბოლო</p>
+        <p class="desribe__value">მინიმუმ 2 სიმბოლო</p>
       </div>
       <div class="choose__time">
         <div class="time__input">
           <p>გამოქვეყნების თარიღი *</p>
-          <input type="date" min="2018-01-01" max="2030-12-31" value="2024-01-17">
+          <input type="date" min="2018-01-01" max="2030-12-31" value="2024-01-17" class="date">
         </div>
         <div class="select">
           <p>კატეგორია *</p>
@@ -63,7 +67,9 @@
       </div>
       <div class="mail">
         <p>ელ-ფოსტა</p>
-        <input type="email" placeholder="exemple@redberry.ge">
+        <input type="email" placeholder="exemple@redberry.ge" class="email">
+        <p class="alarm"><img src="../../images/info-circle.png" alt=""><span>მეილი უნდა მთავრდებოდეს @redberry.ge-<br/>
+          ით</span></p>
       </div>
       <div class="publication">
         <button class="button__publication">გამოქვეყნება</button>
