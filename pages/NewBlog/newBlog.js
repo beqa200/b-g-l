@@ -82,7 +82,7 @@ function checkEmail(){
 }
 
 
-
+let imgUrl;
 
 
 
@@ -96,16 +96,21 @@ upload.addEventListener("input",(event)=>{
     document.querySelector('.choose__image').style.display='none'
     document.querySelector('.change').style.display='flex'
 
-    //console.log(event.target.files[0])
+    console.log(event.target.files[0])
 
     
-        const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.onloadend = () => {
-      
-           localStorage.setItem('str',reader.result)
-        };
-        reader.readAsDataURL(file);
+        imgUrl = URL.createObjectURL(event.target.files[0]);
+        console.log(imgUrl)
+    
+        
+    
+        // const file = event.target.files[0];
+        // const reader = new FileReader();
+        // reader.onloadend = () => {
+        //    console.log(reader.result)
+        //    localStorage.setItem('str',reader.result)
+        // };
+        // reader.readAsDataURL(file);
         
 })
 
@@ -126,8 +131,8 @@ button.addEventListener('click',()=>{
 
    
     async function addBlog(){
-        console.log(category.value)
-        console.log(categories?.find((item)=>item.title==category.value))
+        // console.log(category.value)
+        // console.log(categories?.find((item)=>item.title==category.value))
        const response=await fetch('https://george.pythonanywhere.com/api/blogs/create/',{
         method:"POST",
         headers:{
@@ -140,7 +145,8 @@ button.addEventListener('click',()=>{
             publish_date:date.value,
             description:descript.innerHTML,
             email:email.value,
-            author: authorInfo.value
+            author: authorInfo.value,
+            image:imgUrl.replace('blob:','')
         })
        })
 
