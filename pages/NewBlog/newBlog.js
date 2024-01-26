@@ -5,9 +5,17 @@ const descript=document.querySelector('.descript');
 const email=document.querySelector('.email');
 const button=document.querySelector('.button__publication');
 const date=document.querySelector('.date')
+const category=document.querySelector('#blogs')
+let categories=[];
 
 
+async function getCategories () {
+    const response = await fetch("https://george.pythonanywhere.com/api/categories/")
+     categories = await response.json()
+  console.log(categories)
+}
 
+getCategories()
 
 
 function authorInformation(event){
@@ -74,6 +82,7 @@ function checkEmail(){
 }
 
 
+let imgUrl;
 
 
 
@@ -83,10 +92,26 @@ authorInfo.addEventListener("input",authorInformation)
 descript.addEventListener('input',checkDescribeValue)
 email.addEventListener('input',checkEmail)
 upload.addEventListener("input",(event)=>{
+    
     document.querySelector('.choose__image').style.display='none'
     document.querySelector('.change').style.display='flex'
+
+    console.log(event.target.files[0])
+
     
-    console.log(event.target.files[0].name)
+        imgUrl = URL.createObjectURL(event.target.files[0]);
+        console.log(imgUrl)
+    
+        
+    
+        // const file = event.target.files[0];
+        // const reader = new FileReader();
+        // reader.onloadend = () => {
+        //    console.log(reader.result)
+        //    localStorage.setItem('str',reader.result)
+        // };
+        // reader.readAsDataURL(file);
+        
 })
 
 button.addEventListener('click',()=>{
@@ -104,21 +129,33 @@ button.addEventListener('click',()=>{
     email.style.borderColor='#14D81C'
     email.style.backgroundColor='#F8FFF8'
 
+   
     async function addBlog(){
-       const responce=await fetch('george.pythonanywhere.com/api/blogs/create/',{
+        // console.log(category.value)
+        // console.log(categories?.find((item)=>item.title==category.value))
+       const response=await fetch('https://george.pythonanywhere.com/api/blogs/create/',{
         method:"POST",
         headers:{
             "Content-Type": "application/json",
-            Authorization: "Bearer 582cbe9bbe5afaea15937f0343a93468cdc49ee2"
+            Authorization: `Token ${localStorage.getItem("token")}`
         },
         body:JSON.stringify({
-            title:"titleInfo.value",
-            author:"authorInfo.value",
-            publish_date:"date.value",
-            image:""
+            categories: [categories?.find((item)=>item.title==category.value)],
+            title:titleInfo.value,
+            publish_date:date.value,
+            description:descript.innerHTML,
+            email:email.value,
+            author: authorInfo.value,
+            image:imgUrl.replace('blob:','')
         })
        })
+
+         const data=await response.json();
+         console.log(data)
     }
+    
+
+    addBlog()
 })
 
 

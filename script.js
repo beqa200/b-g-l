@@ -2,7 +2,7 @@ const income=document.querySelector('.income');
 const cross=document.querySelector('.cross')
 const register=document.querySelector('.register')
 const modalEmail=document.querySelector('.modal__email')
-const logIn=modalEmail.value
+
 
 if(localStorage.getItem('email')){
   modalEmail.value=localStorage.getItem('email')
@@ -24,18 +24,19 @@ register.addEventListener('click',()=>{
 })
 async function login(){
   try{
-    const responce=await fetch('https://george.pythonanywhere.com/api/login/',{
+    const response=await fetch('https://george.pythonanywhere.com/api/login/',{
       method:"POST",
       headers:{
         "Content-Type": "application/json",
         
       },
       body: JSON.stringify({
-        email:'logIn',
+        email:modalEmail.value,
       })
     });
-    console.log(responce)
-    const data= await responce.json()
+    console.log(response)
+    const data= await response.json()
+    localStorage.setItem('token',data.token)
     console.log(data)
     
   } catch (error){
