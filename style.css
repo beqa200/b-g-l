@@ -193,3 +193,57 @@ a {
 .full-paragraph {
   font-weight: 14px;
 }
+
+#modalWindow {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:10px;
+  top:200px;
+  left: 33%;
+  border-radius: 12px;
+  background: white;
+  margin: auto;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  visibility: hidden;
+ }
+.register{
+  width: 288px;
+  background-color: #5D37F3;
+  color:white;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 15px;
+}
+#modalWindow input{
+  width: 288px;
+  height: 44px;
+  border-radius: 12px;
+  outline: none;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1.5px solid #5D37F3;
+  
+}
+#modalWindow h2{
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+.modal{
+  display: flex;
+  gap:10px;
+  visibility: hidden;
+}
+.modal__two{
+  display: none;
+}
+.cross{
+  position: absolute;
+  right: 20px;
+  top:20px
+}
