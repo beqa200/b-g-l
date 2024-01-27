@@ -48,7 +48,7 @@ async function filterCards(categories) {
   ${blog.categories
     .map(
       (category) =>
-        `<li class="element market"><a href="#">${category.title}</a></li>`
+        `<li class="element market"><a href="#">${category.title} </a></li>`
     )
     .join("")}
     
