@@ -122,11 +122,29 @@ cross.addEventListener('click',()=>{
 })
 income.addEventListener('click',(event)=>{
      document.querySelector('#modalWindow').style.visibility='visible'
+     if(income.innerHTML=='დაამატე ბლოგი'){
+      window.location.href='pages/NewBlog/newBlog.html'
+     }
 })
-register.addEventListener('click',()=>{
-    localStorage.setItem('email',modalEmail.value)
-
+register.addEventListener('click',(event)=>{
+  if(event.target.value=='შესვლა'){
     login()
+    if(localStorage.getItem('token') != ''){
+      register.value='კარგი'
+      document.querySelector('.inc').innerHTML='წარმატებული ავტორიზაცია'
+      modalEmail.style.display='none'
+      document.querySelector('.postp').style.display='none'
+      document.querySelector('.tick').style.display='flex'
+      document.querySelector('.tick').style.marginBottom='20px'
+      
+    } 
+  }else{
+      document.querySelector('#modalWindow').style.display='none'
+      document.querySelector('.income').innerHTML='დაამატე ბლოგი'
+      document.querySelector('.income').style.width='153px'
+    }
+    
+   
 })
 async function login(){
   try{
@@ -140,16 +158,18 @@ async function login(){
         email:modalEmail.value,
       })
     });
-    console.log(response)
+    console.log(response.ok)
     const data= await response.json()
     localStorage.setItem('token',data.token)
     console.log(data)
+    
     
   } catch (error){
     alert('Error during login:', error)
     
   }
 }
+
 
 
 
