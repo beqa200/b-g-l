@@ -12,7 +12,7 @@ let categories=[];
 async function getCategories () {
     const response = await fetch("https://george.pythonanywhere.com/api/categories/")
      categories = await response.json()
-  console.log(categories)
+  
 }
 
 getCategories()
@@ -151,11 +151,17 @@ button.addEventListener('click',()=>{
        })
 
          const data=await response.json();
-         console.log(data)
+         if(response.ok){
+            document.querySelector('.modalwindow').style.visibility='visible'
+         }
     }
     
-
+    
     addBlog()
+})
+
+document.querySelector('.modalwindowbutton').addEventListener('click',()=>{
+    window.location="../index.html"
 })
 
 

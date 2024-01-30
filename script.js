@@ -19,7 +19,18 @@ income.addEventListener('click',(event)=>{
 })
 register.addEventListener('click',()=>{
     localStorage.setItem('email',modalEmail.value)
-
+    if(localStorage.setItem != ''){
+      register.value='კარგი'
+      document.querySelector('.inc').innerHTML='წარმატებული ავტორიზაცია'
+      modalEmail.style.display='none'
+      document.querySelector('.postp').style.display='none'
+      document.querySelector('.tick').style.display='flex'
+      document.querySelector('.tick').style.marginBottom='20px'
+      
+    }else if(register.value=='კარგი'){
+      document.querySelector('#modalWindow').style.display='none'
+    }
+    
     login()
 })
 async function login(){
@@ -34,16 +45,18 @@ async function login(){
         email:modalEmail.value,
       })
     });
-    console.log(response)
+    console.log(response.ok)
     const data= await response.json()
     localStorage.setItem('token',data.token)
     console.log(data)
+    
     
   } catch (error){
     alert('Error during login:', error)
     
   }
 }
+
 
 
 
