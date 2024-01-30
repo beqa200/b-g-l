@@ -16,6 +16,9 @@ cross.addEventListener('click',()=>{
 })
 income.addEventListener('click',(event)=>{
      document.querySelector('#modalWindow').style.visibility='visible'
+     if(income.innerHTML=='დაამატე ბლოგი'){
+      window.location.href='pages/NewBlog/newBlog.html'
+     }
 })
 register.addEventListener('click',(event)=>{
   if(event.target.value=='შესვლა'){
@@ -31,6 +34,8 @@ register.addEventListener('click',(event)=>{
     } 
   }else{
       document.querySelector('#modalWindow').style.display='none'
+      document.querySelector('.income').innerHTML='დაამატე ბლოგი'
+      document.querySelector('.income').style.width='153px'
     }
     
    
