@@ -161,7 +161,7 @@ button.addEventListener('click',()=>{
 })
 
 document.querySelector('.modalwindowbutton').addEventListener('click',()=>{
-    window.location="../index.html"
+    window.location.href="../../index.html"
 })
 
 

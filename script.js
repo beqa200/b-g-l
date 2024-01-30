@@ -17,9 +17,10 @@ cross.addEventListener('click',()=>{
 income.addEventListener('click',(event)=>{
      document.querySelector('#modalWindow').style.visibility='visible'
 })
-register.addEventListener('click',()=>{
-    localStorage.setItem('email',modalEmail.value)
-    if(localStorage.setItem != ''){
+register.addEventListener('click',(event)=>{
+  if(event.target.value=='შესვლა'){
+    login()
+    if(localStorage.getItem('token') != ''){
       register.value='კარგი'
       document.querySelector('.inc').innerHTML='წარმატებული ავტორიზაცია'
       modalEmail.style.display='none'
@@ -27,11 +28,12 @@ register.addEventListener('click',()=>{
       document.querySelector('.tick').style.display='flex'
       document.querySelector('.tick').style.marginBottom='20px'
       
-    }else if(register.value=='კარგი'){
+    } 
+  }else{
       document.querySelector('#modalWindow').style.display='none'
     }
     
-    login()
+   
 })
 async function login(){
   try{
