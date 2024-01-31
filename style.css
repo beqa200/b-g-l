@@ -186,14 +186,15 @@ h3,
   display: flex;
   align-items: center;
 }
-.full-paragraph,
-a {
-  color: #5d37f3;
-}
+
 .full-paragraph {
   font-weight: 14px;
+  
 }
-
+.full-paragraph a{
+  color: #5d37f3;
+  cursor: pointer;
+}
 #modalWindow {
   position: fixed;
   display: flex;

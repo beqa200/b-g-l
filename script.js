@@ -56,10 +56,13 @@ async function login() {
   }
 }
 
-document.querySelector(".full-paragraph").addEventListener("click", () => {
-  window.location.href = "pages/Blog/blog.html";
-});
-
+const fullParagraph = document.querySelectorAll(".full-paragraph");
+const fullparagraph = Array.from(fullParagraph);
+for (let i = 0; i <= fullparagraph.length; i++) {
+  fullparagraph[i].addEventListener("click", () => {
+    window.location.href = "pages/Blog/blog.html";
+  });
+}
 const item = [...document.querySelectorAll(".item")];
 const nav = [...document.querySelectorAll(".nav-list")];
 console.log(nav);
